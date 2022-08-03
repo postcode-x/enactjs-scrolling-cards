@@ -1,3 +1,5 @@
+[![IMAGE_ALT](https://img.youtube.com/vi/Z4n1E8Lrma0/0.jpg)](https://www.youtube.com/watch?v=Z4n1E8Lrma0)
+
 This project was bootstrapped with [@enact/cli](https://github.com/enactjs/cli).
 
 Below you will find some information on how to perform common tasks.
