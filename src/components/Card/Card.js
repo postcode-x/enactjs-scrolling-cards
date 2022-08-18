@@ -16,9 +16,10 @@ const Card = (props) => {
 		setOpenAlert(true);
     });
 	
-	return (
+	return (console.log(props),
 		<>
 			<SpottableDiv {...props} onClick={() => handleAlert()} className={css.card}>
+				{props.index}
 				<img src={props.image} className={css.cardImage} />
 			</SpottableDiv>
 			{<Alert
