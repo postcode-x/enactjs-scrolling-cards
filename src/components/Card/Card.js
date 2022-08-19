@@ -12,14 +12,27 @@ const Card = (props) => {
 
 	const [openAlert, setOpenAlert] = useState(false);
 
-	const handleAlert = useCallback((event) => {
+	const handleAlert = useCallback((ev) => {
 		setOpenAlert(true);
     });
+
+	const handleSpotlightRight = useCallback((ev) => {
+		ev.preventDefault()
+		ev.stopPropagation();
+	});
+
+	const handleSpotlightLeft = useCallback((ev) => {
+		ev.preventDefault();
+		ev.stopPropagation();
+	});
 	
 	return (console.log(props),
 		<>
-			<SpottableDiv {...props} onClick={() => handleAlert()} className={css.card}>
-				{props.index}
+			<SpottableDiv {...props}   
+				onClick={() => handleAlert()} 
+				className={css.card}
+				onSpotlightLeft = {(ev) => {props.index === 0 ? handleSpotlightLeft(ev) : null}}
+				onSpotlightRight = {(ev) => {props.listlength - (props.index + 1) === 0 ? handleSpotlightRight(ev) : null}}>
 				<img src={props.image} className={css.cardImage} />
 			</SpottableDiv>
 			{<Alert
